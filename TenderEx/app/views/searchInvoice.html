@@ -1,0 +1,47 @@
+﻿<div class="col-md-offset-4 col-md-4">
+    <select class="form-control" ng-model="selectedInvoice" ng-change="getInvoice(selectedInvoice)" ng-options="x for x in invoicesIDs"></select>
+</div>
+<br />
+    
+<br />
+    <table ng-show="invoiceWasDownloaded" class="table table-bordered">
+        <tr>
+            <th colspan="5">Company Name: {{invoice.companyName}}</th>
+        </tr>
+        <tr>
+            <td>Invoice ID</td>
+            <td>{{invoice.id}}</td>
+            <td></td>
+            <td>Date</td>
+            <td>{{invoice.date | date :  "dd/MM/yyyy"}}</td>
+        </tr>
+        <tr>
+            <td>Job</td>
+            <td>Hours</td>
+            <td>Price per hour</td>
+            <td>Remarks</td>
+            <td>Total sum</td>
+        </tr>
+        <tr ng-repeat="job in invoice.jobs">
+            <td>{{job.jobName}}</td>
+            <td>{{job.hours}}</td>
+            <td>{{job.pricePerHour}}</td>
+            <td>{{job.remark}}</td>
+            <td>{{job.totalPerJob}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{invoice.total}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>With VAT</td>
+            <td>{{invoice.totalWithVat}}</td>
+        </tr>
+    </table>
+<center class="ng-scope"><button type="button" class="btn btn-info" ng-click="addInvoice()">Add invoice</button></center>

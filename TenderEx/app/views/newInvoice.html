@@ -1,0 +1,48 @@
+﻿<div class="col-md-8 col-md-offset-2">
+    <form name="newInvoiceForm">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Company name:</label><input type="text" class="form-control" data-ng-model="invoice.companyName" placeholder="Company name" required />
+            </div>
+            <div class="col-md-4">
+                <label>Invoice number:</label><input type="number" class="form-control" data-ng-model="invoice.id" placeholder="Invoice number" required />
+            </div>
+            <div class="col-md-4">
+                <label>Date:</label><input type="date" class="form-control" data-ng-model="invoice.date" placeholder="Date" required />
+            </div>
+         </div>
+        <br />
+            
+                <fieldset ng-repeat="job in jobsArr">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Job Name:</label>  <input type="text" class="form-control" data-ng-model="job.jobName" placeholder="Job name" required />
+                        </div>
+                        <div class="col-md-8">
+                            <label>Remarks:(not mendatory)</label>   <input type="text" class="form-control" data-ng-model="job.remark" placeholder="Remarks" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Hours:</label> <input type="number" class="form-control" data-ng-model="job.hours" placeholder="Hours" />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Price per hour</label><input type="number" class="form-control" data-ng-model="job.pricePerHour" placeholder="Price per hour" />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Total per job</label><input type="number" class="form-control" ng-model="job.totalPerJob" placeholder="Total" readonly ng-value="calculateJob(job)" />
+                        </div>
+                    </div>
+</fieldset>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Total:</label><input type="number" class="form-control" ng-value="totalSum()" readonly ng-model="invoice.total" />&nbsp;
+            </div>
+                <div class="col-md-6">
+                    <label>Total with VAT:</label><input type="number" class="form-control" ng-value="totalWithVatCalc()" readonly ng-model="invoice.totalWithVat" /><br />
+                </div>
+            </div>
+            <button ng-click="addJob()" type="button" class="btn btn-default">Add Job</button>
+            <button ng-click="saveInvoice()" ng-disabled="!newInvoiceForm.$valid" type="button" class="btn .btn-success">Save</button>
+</form>
+</div>

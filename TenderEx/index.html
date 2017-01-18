@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TenderEx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css" />
+</head>
+<body ng-app="TenderInvoiceEx">
+    <div class="jumbotron" ng-controller="mainController">
+        <div class="container">
+            <div class="page-header text-center">
+                <h1>Tender Invoice Exercise</h1>
+            </div>
+            <p>This single page application was built in order to manage invoices. Please choose weather to add an invoice or to look for one.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div data-ng-view="">
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js"></script>
+    <script src="app/app.js"></script>
+    <!--Services-->
+    <script src="app/services/invoiceService.js"></script>
+    <!-- Load controllers -->
+    <script src="app/controllers/mainController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/newInvoiceController.js"></script>
+    <script src="app/controllers/searchInvoiceController.js"></script>
+</body>
+</html>

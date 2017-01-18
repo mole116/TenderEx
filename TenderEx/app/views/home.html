@@ -1,0 +1,19 @@
+﻿<div class="row">
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+    <div class="col-md-4">
+        <h3>Add Invoice</h3>
+        <p class="text-primary">Add Invoice</p>
+        <p><a class="btn btn-info" ng-href='#/newInvoice' role="button">Add &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>Search Invoice</h3>
+        <p class="text-primary" ng-show="idsList.length>0">Use the button below to search for an invoice</p>
+        <p class="text-primary" ng-show="idsList.length==0">Button disabled since there are no invoices in the system </p>
+        <button type="button" ng-disabled="idsList.length==0" class="btn btn-info" ng-click="search()">Search</button>
+    </div>
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+</div>
